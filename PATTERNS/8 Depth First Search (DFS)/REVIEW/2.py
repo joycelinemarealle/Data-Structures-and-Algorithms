@@ -4,7 +4,7 @@ class Node:
         self.left = left
         self.right = right
 
-def all_paths_for_sum():
+def all_paths_for_sum(root, sum):
     # return
     allPaths = []
     root_to_leaf_path(root,[], allPaths, sum)
@@ -20,7 +20,7 @@ def root_to_leaf_path (currentNode , currentPath, allPaths, sum):
 
     #if it is a leaf check is current sum = sum
     if currentNode.value == sum and currentNode.left is None and currentNode.right is None:
-        allPaths.append(currentPath)
+        allPaths.append(list(currentPath))
 
     else:
         # traverse left sub tree  track current path and if sum matches s then store in the allPaths array
@@ -39,5 +39,7 @@ def main ():
     root.left.right = Node(5)
     root.right.left = Node(2)
     root.right.right = Node (7)
+    sum = 12
+    print("All paths" + str(sum) + str(all_paths_for_sum(root,sum)))
 
 main ()

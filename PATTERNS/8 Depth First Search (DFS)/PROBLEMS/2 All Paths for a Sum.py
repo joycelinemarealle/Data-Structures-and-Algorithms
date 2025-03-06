@@ -44,8 +44,8 @@ def main():
     root.left.right = TreeNode (5)
     root.right.left = TreeNode(2)
     root.right.right = TreeNode(7)
-    sum = 23
-    print ("Tree paths with sum "+ str (sum) +  ": "+ str(find_paths(root,sum)))
+    sum = 12
+    print ("Tree paths with sum "+str(sum)+  ": "+ str(find_paths(root,sum)))
 
 main()
 

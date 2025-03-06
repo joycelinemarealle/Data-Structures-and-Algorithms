@@ -28,8 +28,9 @@ def root_to_leaf_recursive(currentNode, currentPath, allPaths, sum):
     else:
         #traverse left tree
         root_to_leaf_recursive(currentNode.left,currentPath, allPaths, sum- currentNode.value)
+        # traverse right tree
         root_to_leaf_recursive(currentNode.right, currentPath,allPaths, sum-currentNode.value)
-
+    #if leaf node but sum != currentnode.value
     #delete last element of currentPath to back track as perform up recursion stack
     del currentPath[-1]
 
@@ -37,12 +38,12 @@ def root_to_leaf_recursive(currentNode, currentPath, allPaths, sum):
 def main ():
     root = Node(1)
     root.left = Node(7)
-    root.right = Node(7)
+    root.right = Node(9)
     root.left.left = Node(4)
     root.left.right = Node(5)
     root.right.left = Node(2)
-    root.right.right = Node(3)
-    print("Tree paths with sum" + str(has_paths(root,23)))
+    root.right.right = Node(7)
+    print("Tree paths with sum" + str(has_paths(root,12)))
 main()
 
 
