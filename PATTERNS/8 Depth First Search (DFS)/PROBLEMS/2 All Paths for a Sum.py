@@ -23,7 +23,7 @@ def find_paths_recursive(currentNode,sum, currentPath, allPaths):
 
     #4 Check if it is a leaf node and if its value == sum , save current path into the all Paths list
     if currentNode.value == sum and currentNode.left is None and currentNode.right is None:
-        allPaths.append(currentPath)
+        allPaths.append(list (currentPath))
 
     else: #if not leaf node
         #traverse through left sub-tree and update the sum (sum -currenotNode.value)
