@@ -17,9 +17,9 @@ def traverse(root):
 
     #loop as long queue is not empty
     while queue:
-    #for each level iterate safe the levelSize
-    levelSize = len(queue)
-    currentLevel = [] #empty array to hold nodes of a level
+     #for each level iterate safe the levelSize
+     levelSize = len(queue)
+     currentLevel = [] #empty array to hold nodes of a level
 
     #remove levelSize nodes from queue and push to array
     for _ in range(levelSize):
