@@ -16,7 +16,7 @@ class MedianOfAStream:
         else:
             heappush(self.minHeap, num)
 
-        #2 Balance elemnt if odd then decided to have max heap has more element than min heap
+        #2 Balance element if odd then decided to have max heap has more element than min heap
         #more element in max heap
         if len(self.maxHeap) > len(self.minHeap)+1:
             heappush(self.minHeap, -heappop(self.maxHeap))
@@ -24,7 +24,12 @@ class MedianOfAStream:
         elif len(self.maxHeap) < len(self.minHeap):
             heappush(self.maxHeap, -heappop(self.minHeap))
     def find_median(self):
-        return 0.0
+        #if we have even number of elements take average of middle two numbers
+        if len (self.maxHeap) == len(self.minHeap):
+            return (-self.maxHeap[0]+ self.minHeap[0])/2.0
+
+        #because max heap has one more element
+        return -self.maxHeap[0]/1.0
 
 
 def main():
