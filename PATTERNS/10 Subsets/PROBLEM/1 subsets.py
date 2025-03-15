@@ -5,10 +5,10 @@ def find_substest(nums):
         n = len(subsets)
         #take all existing subsets and insert current number in them to create new subsets
         for i in range (n):
-        #create a new subset from existing subset and insert current element to it
-         set =  list(subsets[i])
-         set.append(currentNumber)
-         subsets.append(set)
+        #create a new subset by copying an existing one and insert current element to it
+         set =  list(subsets[i]) #copy existing subset
+         set.append(currentNumber) #add current number
+         subsets.append(set) #store new subset
 
     return subsets
 
