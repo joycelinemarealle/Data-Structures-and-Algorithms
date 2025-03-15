@@ -1,8 +1,9 @@
 
 def subsets(nums):
-    #1 Initialize empty list store subset
     subsets = [] #empty list to hold all distinct subsets
 
+    #1 add empty substet
+    subsets.append([])
     #2 Loop over the nums
     for currentNumber in nums:
         #3 Get current number of subsets
